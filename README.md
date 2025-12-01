@@ -25,6 +25,7 @@ A proposta é mostrar não apenas a criação de tabelas e relacionamentos, mas 
 
 ## 📂 Estrutura do repositório
 
+```text
 ecommerce-sql/
 │
 ├── ddl.sql                # Script de criação do banco e tabelas
@@ -45,7 +46,7 @@ ecommerce-sql/
 
 ## 📊 Modelo lógico (Diagrama ASCII)
 
-
+```text
 +------------------+        +------------------+
 |      CLIENTE     |        |     ENDERECO     |
 +------------------+        +------------------+
