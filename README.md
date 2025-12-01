@@ -35,7 +35,7 @@ ecommerce-sql/
 └── docs/
 └── modelo-logico.txt      # Diagrama ASCII do modelo lógico
 
-
+```
 ---
 
 ## 🛠️ Tecnologias
@@ -57,6 +57,8 @@ ecommerce-sql/
 | cnpj (unique)    |     |  +------------------+
 | email (unique)   |
 +------------------+
+
+```
 ...
 (diagrama completo disponível em docs/modelo-logico.txt)
 
