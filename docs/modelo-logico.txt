@@ -1,1 +1,80 @@
++------------------+        +------------------+
+|      CLIENTE     |        |     ENDERECO     |
++------------------+        +------------------+
+| id (PK)          |<----+  | id (PK)          |
+| nome             |     |  | cliente_id (FK)  |
+| tipo (PF/PJ)     |     |  | logradouro       |
+| cpf (unique)     |     |  | numero           |
+| cnpj (unique)    |     |  | bairro           |
+| email (unique)   |     |  | cep              |
+| telefone         |     |  | cidade_id (FK)   |
++------------------+     |  | tipo             |
+                         |  +------------------+
 
++------------------+        +------------------+
+| ENTIDADE_COMERCIAL|       |   FORNECEDOR     |
++------------------+        +------------------+
+| id (PK)          |<----+  | id (PK)          |
+| nome             |     |  | entidade_id (FK) |
+| documento(unique)|     |  | ativo            |
+| email            |     |  +------------------+
+| telefone         |     |
++------------------+     |  +------------------+
+                         +--|    VENDEDOR      |
+                            +------------------+
+                            | id (PK)          |
+                            | entidade_id (FK) |
+                            | ativo            |
+                            +------------------+
+
++------------------+        +------------------+
+|    CATEGORIA     |        |     PRODUTO      |
++------------------+        +------------------+
+| id (PK)          |        | id (PK)          |
+| nome (unique)    |        | nome             |
++------------------+        | sku (unique)     |
+                            | categoria_id (FK)|
+                            | preco            |
+                            | ativo            |
+                            +------------------+
+
++------------------+        +------------------+
+| FORNECEDOR_PROD. |        |     ESTOQUE      |
++------------------+        +------------------+
+| fornecedor_id(FK)|        | id (PK)          |
+| produto_id (FK)  |        | produto_id (FK)  |
+| preco_custo      |        | quantidade       |
+| lead_time_dias   |        | localizacao      |
++------------------+        +------------------+
+
++------------------+        +------------------+
+| FORMA_PAGAMENTO  |        | CLIENTE_FORMA_PG |
++------------------+        +------------------+
+| id (PK)          |        | id (PK)          |
+| nome (unique)    |        | cliente_id (FK)  |
+| descricao        |        | forma_pagto_id(FK)|
++------------------+        | apelido          |
+                            | detalhes_publicos|
+                            | ativo            |
+                            +------------------+
+
++------------------+        +------------------+
+|      PEDIDO      |        |   PEDIDO_ITEM    |
++------------------+        +------------------+
+| id (PK)          |        | id (PK)          |
+| cliente_id (FK)  |        | pedido_id (FK)   |
+| vendedor_id (FK) |        | produto_id (FK)  |
+| endereco_entrega |        | quantidade       |
+| status           |        | preco_unitario   |
+| total            |        +------------------+
++------------------+
+
++------------------+        +------------------+
+| PEDIDO_PAGAMENTO |        |     ENTREGA      |
++------------------+        +------------------+
+| id (PK)          |        | id (PK)          |
+| pedido_id (FK)   |        | pedido_id (FK)   |
+| cliente_forma_pg |        | codigo_rastreio  |
+| valor            |        | status           |
++------------------+        | atualizado_em    |
+                            +------------------+
